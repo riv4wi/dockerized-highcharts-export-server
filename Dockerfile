@@ -55,6 +55,8 @@ RUN git clone https://github.com/highcharts/node-export-server.git . && \
   git checkout enhancement/puppeteer && \
   npm install 
 
+RUN npm install highcharts-grouped-categories 
+
 EXPOSE 7801
 
 COPY --chown=$UID:$GUID ./.hcexport ./.hcexport
