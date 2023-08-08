@@ -51,11 +51,9 @@ ENV HIGHCHARTS_VERSION 'latest'
 
 WORKDIR /home/highcharts
 
-RUN git clone https://github.com/highcharts/node-export-server.git . && \
+RUN git clone https://github.com/riv4wi/node-export-server.git . && \
   git checkout enhancement/puppeteer && \
   npm install 
-
-RUN npm install highcharts-grouped-categories 
 
 EXPOSE 7801
 
