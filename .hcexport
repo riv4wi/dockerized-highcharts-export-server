@@ -6,14 +6,6 @@
   "useLocalModules": true,
   "logLevel": 3,
   "logPath": "./export-server.log",
-  "batchLimit": 10,
-  "concurrentSessions": 5,
-  "customCode": null,
-  "concurrency": 1,
-  "enableServer": true,
-  "ssl": false,
-  "allowCodeExecution": true,
-  "loadDefaultConfig": true,
   "puppeteer": {
     "args": [
       "--disable-gpu",
