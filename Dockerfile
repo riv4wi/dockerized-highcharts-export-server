@@ -46,14 +46,15 @@ USER $UNAME
 ENV ACCEPT_HIGHCHARTS_LICENSE 1
 ENV HIGHCHARTS_USE_STYLED 0
 ENV HIGHCHARTS_MOMENT 1
-ENV HIGHCHARTS_USE_NPM 1
-ENV HIGHCHARTS_VERSION 'latest'
+ENV HIGHCHARTS_USE_LOCAL_MODULES 1
+ENV HIGHCHARTS_USE_NPM 0
 
 WORKDIR /home/highcharts
 
 RUN git clone https://github.com/riv4wi/node-export-server.git . && \
   git checkout enhancement/puppeteer && \
-  npm install 
+  npm install && \
+  npm install highcharts
 
 EXPOSE 7801
 

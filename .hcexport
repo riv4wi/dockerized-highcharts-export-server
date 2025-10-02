@@ -1,11 +1,25 @@
 {
+  "port": 7801,
+  "workers": 2,
+  "workLimit": 10,
+  "maxWorkers": 4,
+  "useLocalModules": true,
+  "logLevel": 3,
+  "logPath": "./export-server.log",
+  "batchLimit": 10,
+  "concurrentSessions": 5,
+  "customCode": null,
+  "concurrency": 1,
+  "enableServer": true,
+  "ssl": false,
+  "allowCodeExecution": true,
+  "loadDefaultConfig": true,
   "puppeteer": {
-    
     "args": [
-        "--disable-gpu",
-        "--disable-dev-shm-usage",
-        "--disable-setuid-sandbox",
-        "--no-sandbox"
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-setuid-sandbox",
+      "--no-sandbox"
     ]
   }
 }
