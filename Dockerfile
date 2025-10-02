@@ -8,8 +8,8 @@ ARG GID=12001
 ARG UNAME=highcharts
 
 # We don't need the standalone Chromium
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # Install Chromium Stable and fonts
 # Note: this installs the necessary libs to make the browser work with Puppeteer.
@@ -43,11 +43,11 @@ RUN groupadd --gid $GID $UNAME && useradd --uid $UID --gid $UNAME $UNAME && \
 # Log in as the newly created user
 USER $UNAME
 
-ENV ACCEPT_HIGHCHARTS_LICENSE 1
-ENV HIGHCHARTS_USE_STYLED 0
-ENV HIGHCHARTS_MOMENT 1
-ENV HIGHCHARTS_USE_LOCAL_MODULES 1
-ENV HIGHCHARTS_USE_NPM 0
+ENV ACCEPT_HIGHCHARTS_LICENSE=1
+ENV HIGHCHARTS_USE_STYLED=0
+ENV HIGHCHARTS_MOMENT=1
+ENV HIGHCHARTS_USE_LOCAL_MODULES=1
+ENV HIGHCHARTS_USE_NPM=0
 
 WORKDIR /home/highcharts
 
@@ -58,7 +58,7 @@ RUN git clone https://github.com/riv4wi/node-export-server.git . && \
 
 EXPOSE 7801
 
-COPY --chown=$UID:$GUID ./.hcexport ./.hcexport
+COPY --chown=$UID:$GID ./.hcexport ./.hcexport
 
 # Migrate and start webserver
 CMD ["npm", "run", "start", "--", "--loadConfig", ".hcexport"]
