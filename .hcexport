@@ -13,5 +13,11 @@
       "--disable-setuid-sandbox",
       "--no-sandbox"
     ]
+  },
+  "highcharts": {
+    "version": "11.4.0",
+    "coreScripts": ["highcharts"],
+    "modules": ["exporting"],
+    "indicators": []
   }
 }
