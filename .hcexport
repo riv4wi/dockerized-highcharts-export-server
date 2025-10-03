@@ -13,5 +13,12 @@
       "--disable-setuid-sandbox",
       "--no-sandbox"
     ]
+  },
+  "highcharts": {
+    "cdnURL": "",
+    "version": "",
+    "coreScripts": ["node_modules/highcharts/highcharts.js"],
+    "modules": ["node_modules/highcharts/modules/exporting.js"],
+    "indicators": []
   }
 }
